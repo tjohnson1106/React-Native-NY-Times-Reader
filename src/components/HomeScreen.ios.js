@@ -4,7 +4,12 @@ import {
     Text
 } from 'react-native';
 import NewsFeed from './NewsFeed';
+import Search from './Search';
 import * as globalStyles from '../styles/global';
+
+// Set the status bar for iOS to light
+StatusBar.setBarStyle('light-content');
+
 export default class HomeScreen extends Component {
 
     constructor(props) {
@@ -13,6 +18,18 @@ export default class HomeScreen extends Component {
             tab: 'newsFeed'
         };
     }
+
+    showBookmarkAlert() {
+        Vibration.vibrate();
+        Alert.alert(
+            'Coming Soon!',
+            'We're hard at work on this feature, check back in the near future.',
+            [
+            { text: 'OK', onPress: () => console.log('User pressed OK') }
+            ]
+        );
+    }
+
     render() {
         return (
             <TabBarIOS
@@ -21,27 +38,27 @@ export default class HomeScreen extends Component {
                 translucent={false}
             >
                 <TabBarIOS.Item
-                    systemIcon = { 'featured'}
+                    systemIcon={'featured'}
                     selected={this.state.tab === 'newsFeed'}
                     onPress={() => this.setState({ tab: 'newsFeed' })}
                 >
                     <NewsFeed />
                 </TabBarIOS.Item>
                 <TabBarIOS.Item
-                    systemIcon = { 'search'}
+                    systemIcon={'search'}
                     selected={this.state.tab === 'search'}
                     onPress={() => this.setState({ tab: 'search' })}
                 >
-                        </Search>
-                        </TabBarIOS.Item>
-            <TabBarIOS.Item
-                systemIcon = { 'bookmarks'}
-                selected={this.state.tab === 'bookmarks'}
-                onPress={() => this.setState({ tab: 'bookmarks' })}
-            >
-                <Text>Bookmarks</Text>
-            </TabBarIOS.Item>
-                
+                    <Search />
+                </TabBarIOS.Item>
+                <TabBarIOS.Item
+                    systemIcon={'bookmarks'}
+                    selected={this.state.tab === 'bookmarks'}
+                    onPress={() => this.setState({ tab: 'bookmarks' })}
+                >
+                    <Text>Bookmarks</Text>
+                </TabBarIOS.Item>
+
             </TabBarIOS >
         );
     }
