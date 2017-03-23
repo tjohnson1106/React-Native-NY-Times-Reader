@@ -10,9 +10,11 @@ const Thumbnail = ({ url, titleText, AccentColor, style }) => {
     const imageStyle = {
         backgroundColor: '${accentColor}77' //adding transparency
     };
+    const TitleComponent = <Title style={styles.title}>{titleText}</Title>;
 
     return (
         <View style={[styles.container, { borderColor: accentColor }, style]}>
+            {url.length > 0 ? (
             <Image
             style={[styles.image]}
             source={{
@@ -21,6 +23,14 @@ const Thumbnail = ({ url, titleText, AccentColor, style }) => {
         >
             <Title style={<styles.title}>{titleText}</Title>
         </Image>
+            ) : (
+                <View
+                style={[styles.image, imageStyle]}
+                >
+                {TitleComponent}
+                </View>
+            
+            )}
         </View>
     );
 };

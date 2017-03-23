@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import {
     View,
     TouchableOpacity,
+    StyleSheet
 } from 'react-native';
 import Byline from './Byline';
 import AppText from './AppText';
@@ -10,13 +11,14 @@ import * as globalStyles from '../styles/global';
 export default class NewsItem extends Component {
     render() {
         const {
-style,
+            style,
             imageUrl,
             title,
             author,
             date,
             location,
             description,
+            onPress
 } = this.props;
         const accentColor = globalStyles.ACCENT_COLORS[
             this.props.index % globalStyles.ACCENT_COLORS.length
@@ -24,6 +26,7 @@ style,
         return (
             <TouchableOpacity
                 style={style}
+                onPress={onPress}
             >
                 <View>
                     <Thumbnail
