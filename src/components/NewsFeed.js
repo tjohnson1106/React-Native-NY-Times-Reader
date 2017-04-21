@@ -7,7 +7,9 @@ import {
     TouchableOpacity
 } from 'react-native';
 import * as globalStyles from '../styles/global';
+
 export default class NewsFeed extends Component {
+    
     constructor(props) {
         super(props);
 

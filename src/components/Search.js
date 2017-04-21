@@ -7,7 +7,7 @@ import {
 import * as globalStyles from '../styles/global';
 export default class Search extends Component {
 
-   
+
 
     render() {
 
@@ -38,8 +38,8 @@ const styles = StyleSheet.create({
     search: {
         borderColor: globalStyles.MUTED_COLOR,
         flexDirection: 'row'
-    alignItems: 'center'
-    borderRadius: 5,
+        alignItems: 'center'
+        borderRadius: 5,
         borderWidth: 1,
         marginTop: 10,
         marginBottom: 5

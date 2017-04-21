@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import {
     TabBarIOS,
-    Text
+    Text,
+    Alert,
+    Vibration,
+    StatusBar
 } from 'react-native';
 import NewsFeed from './NewsFeed';
 import Search from './Search';
