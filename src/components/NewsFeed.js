@@ -47,9 +47,10 @@ export default class NewsFeed extends Component {
             </Modal>
         );
     }
-    onModalOpen() {
+    onModalOpen(url) {
         this.setState({
             modalVisible: true
+            modalURL: url
         });
     }
 

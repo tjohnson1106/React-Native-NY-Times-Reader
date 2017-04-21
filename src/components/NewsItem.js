@@ -9,6 +9,7 @@ import Byline from './Byline';
 import AppText from './AppText';
 import Thumbnail from './Thumbnail';
 import * as globalStyles from '../styles/global';
+
 export default class NewsItem extends Component {
 
     constructor(props) {
