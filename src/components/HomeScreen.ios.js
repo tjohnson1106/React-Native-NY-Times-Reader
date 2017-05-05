@@ -61,7 +61,6 @@ export default class HomeScreen extends Component {
                 >
                     <Text>Bookmarks</Text>
                 </TabBarIOS.Item>
-
             </TabBarIOS >
         );
-    }
+    chrime }
