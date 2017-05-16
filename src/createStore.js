@@ -14,4 +14,4 @@ export default (initialState = {}) => (
         initialState,
         applyMiddleware(logger)
     )
-); 
+);
